@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app
+    container_name: my-app
+    command: "bash ./runapp.sh"
+    environment:
+      - CONNECTION_STRING
+    expose:
+      - 8000
+    ports:
+      - "8080:8080"
